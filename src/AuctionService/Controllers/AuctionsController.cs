@@ -72,6 +72,7 @@ public class AuctionsController : ControllerBase
 
     }
 
+    [Authorize]
     [HttpPut("{id}")]
     public async Task<ActionResult> UpdateAuction(Guid id, UpdateAuctionDto updateAuctionDto){
         var auction = await _context.Auctions.Include(x => x.Item)
